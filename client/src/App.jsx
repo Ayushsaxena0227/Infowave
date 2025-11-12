@@ -10,6 +10,10 @@ import React from "react";
 import PrivateRoute from "./context/PrivateRoute.jsx";
 import Login from "./pages/signin/index.jsx";
 import Signup from "./pages/signup/index.jsx";
+import Home from "./pages/home/index.jsx";
+import About from "./pages/about/index.jsx";
+import Contact from "./pages/contact/index.jsx";
+import NewsFeed from "./pages/dashboard/index.jsx";
 
 export default function App() {
   return (
@@ -17,14 +21,26 @@ export default function App() {
       <Navbar />
       <div className="grow">
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          {/* <Route path="/about" element={<About />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route
+          {/* <Route
             path="/profile"
-            element={<PrivateRoute>{/* <Profile /> */}</PrivateRoute>}
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          /> */}
+          <Route
+            path="/feed"
+            element={
+              <PrivateRoute>
+                <NewsFeed />
+              </PrivateRoute>
+            }
           />
         </Routes>
       </div>
