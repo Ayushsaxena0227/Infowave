@@ -9,6 +9,8 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [genre, setGenre] = useState("technology");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,18 +21,30 @@ export default function Signup() {
     setLoading(true);
 
     try {
+      // create user
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
+
+      // set display name in Firebase Auth profile
       await updateProfile(userCredential.user, { displayName: name });
+
+      // save user profile in Firestore
       await setDoc(doc(db, "users", userCredential.user.uid), {
+        uid: userCredential.user.uid,
         name,
         email,
-        interests: [],
+        age: parseInt(age),
+        genre,
+        // store selected genre inside an array too
+        interests: [genre],
+        createdAt: new Date(),
       });
-      navigate("/");
+
+      // redirect to /feed directly after signup
+      navigate("/feed");
     } catch (err) {
       switch (err.code) {
         case "auth/email-already-in-use":
@@ -77,7 +91,7 @@ export default function Signup() {
                 Full Name
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-white p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 placeholder="Enter your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -97,6 +111,41 @@ export default function Signup() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+            </div>
+
+            {/* Age Input */}
+            <div>
+              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                Age
+              </label>
+              <input
+                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                type="number"
+                placeholder="Enter your age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+              />
+            </div>
+
+            {/* Genre / Interest Input */}
+            <div>
+              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                Interest (Genre)
+              </label>
+              <select
+                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                value={genre}
+                onChange={(e) => setGenre(e.target.value)}
+                required
+              >
+                <option value="technology">Technology</option>
+                <option value="sports">Sports</option>
+                <option value="health">Health</option>
+                <option value="business">Business</option>
+                <option value="science">Science</option>
+                <option value="entertainment">Entertainment</option>
+              </select>
             </div>
 
             {/* Password Input */}

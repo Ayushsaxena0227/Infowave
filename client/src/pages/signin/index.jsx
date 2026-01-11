@@ -18,9 +18,8 @@ export default function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/feed"); // redirect to home after successful login
+      navigate("/feed");
     } catch (err) {
-      // Friendly error message for users
       switch (err.code) {
         case "auth/user-not-found":
           setError("No user found with that email.");

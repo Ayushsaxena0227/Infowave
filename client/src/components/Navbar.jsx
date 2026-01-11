@@ -93,7 +93,7 @@ export default function Navbar() {
                   </Link>
                   <button
                     onClick={logout}
-                    className="px-5 py-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2"
+                    className="px-5 py-2  from-pink-600 to-purple-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2"
                   >
                     <LogOut className="w-4 h-4" />
                     <span className="cursor-pointer">Logout</span>

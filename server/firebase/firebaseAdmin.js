@@ -3,8 +3,15 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const serviceAccount = require("../serviceAccountKey.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+// initialize only once
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
 
-export { admin };
+// Get Firestore instance
+const db = admin.firestore();
+
+// export both admin and db
+export { admin, db };

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const newsRoutes = require("./routes/newsRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 
 // news route
 app.use("/api", newsRoutes);
+app.use("/api", userRoutes);
 
 const PORT = process.env.PORT || 5003;
 app.listen(PORT, () => {

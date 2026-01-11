@@ -27,7 +27,7 @@ export default function Home() {
 
         {/* Main Heading */}
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient block">
+          <span className=" from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient block">
             Welcome to
           </span>
           <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent block mt-2">
