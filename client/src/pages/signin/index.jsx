@@ -44,7 +44,7 @@ export default function Login() {
         <div className="glass-effect p-8 md:p-10 rounded-3xl shadow-2xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-black mb-2 text-gray-500">
+            <h2 className="text-4xl md:text-5xl font-black mb-2 text-gray-600">
               Welcome Back
             </h2>
             <p className="text-gray-400 text-lg">
@@ -63,11 +63,11 @@ export default function Login() {
           <form onSubmit={handleLogin} className="space-y-5">
             {/* Email Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Email
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-gray-500 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 shadow-xs text-gray-500 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 type="email"
                 placeholder="Enter your mail"
                 value={email}
@@ -78,11 +78,11 @@ export default function Login() {
 
             {/* Password Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm shadow-xs font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Password
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

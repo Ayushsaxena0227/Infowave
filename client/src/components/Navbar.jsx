@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import {
@@ -18,6 +18,7 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -30,6 +31,9 @@ export default function Navbar() {
     { name: "About", icon: Info, path: "/about" },
     { name: "Contact", icon: MessageCircle, path: "/contact" },
   ];
+  const myFeed = () => {
+    navigate("/myfeed");
+  };
 
   const isActive = (path) => location.pathname === path;
 
@@ -85,7 +89,7 @@ export default function Navbar() {
                     className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
                       isActive("/profile")
                         ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/50"
-                        : "text-gray-300 hover:bg-white/5 hover:text-white"
+                        : "text-gray-500 hover:bg-white/5 hover:text-gray-600"
                     }`}
                   >
                     <User className="w-4 h-4" />
@@ -93,10 +97,17 @@ export default function Navbar() {
                   </Link>
                   <button
                     onClick={logout}
-                    className="px-5 py-2  from-pink-600 to-purple-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2"
+                    className="px-5 py-2  text-gray-500 rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2"
                   >
                     <LogOut className="w-4 h-4" />
                     <span className="cursor-pointer">Logout</span>
+                  </button>
+                  <button
+                    onClick={myFeed}
+                    className="px-5 py-2 text-gray-500 rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2"
+                  >
+                    {/* <LogOut className="w-4 h-4" /> */}
+                    <span className="cursor-pointer">MyFeed</span>
                   </button>
                 </>
               ) : (

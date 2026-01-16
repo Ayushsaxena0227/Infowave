@@ -51,7 +51,7 @@ export default function NewsFeed() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
           <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Personalized Feed
+            Your Daily Updates Are Here
           </h1>
 
           {/* Category selector */}

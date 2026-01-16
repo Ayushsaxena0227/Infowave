@@ -47,7 +47,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Input */}
               <div>
-                <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                <label className="block text-sm font-bold text-gray-500 mb-2 uppercase tracking-wide">
                   Your Name
                 </label>
                 <input
@@ -56,14 +56,14 @@ export default function Contact() {
                   placeholder="Enter Your Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder-gray-500"
+                  className="w-full bg-white/5 border border-gray-300 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder-gray-500"
                   required
                 />
               </div>
 
               {/* Email Input */}
               <div>
-                <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                <label className="block text-sm font-bold text-gray-500 mb-2 uppercase tracking-wide">
                   Email Address
                 </label>
                 <input
@@ -71,14 +71,14 @@ export default function Contact() {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder-gray-500"
+                  className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder-gray-500"
                   required
                 />
               </div>
 
               {/* Message Textarea */}
               <div>
-                <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+                <label className="block text-sm font-bold text-gray-500 mb-2 uppercase tracking-wide">
                   Your Message
                 </label>
                 <textarea
@@ -86,7 +86,7 @@ export default function Contact() {
                   placeholder="Tell us what's on your mind..."
                   value={form.message}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all resize-none placeholder-gray-500"
+                  className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all resize-none placeholder-gray-500"
                   required
                 ></textarea>
               </div>

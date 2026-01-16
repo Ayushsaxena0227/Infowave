@@ -19,7 +19,7 @@ export default function Home() {
       >
         {/* Badge */}
         <div className="inline-block mb-6 px-6 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full animate-in">
-          <span className="text-indigo-300 font-bold text-sm tracking-wide uppercase flex items-center space-x-2">
+          <span className="text-indigo-500 font-bold text-sm tracking-wide uppercase flex items-center space-x-2">
             <TrendingUp className="w-4 h-4" />
             <span>AI-Powered News Curation</span>
           </span>

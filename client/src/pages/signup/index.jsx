@@ -87,11 +87,11 @@ export default function Signup() {
           <form onSubmit={handleSignup} className="space-y-5">
             {/* Name Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Full Name
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 placeholder="Enter your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -101,11 +101,11 @@ export default function Signup() {
 
             {/* Email Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Email
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -115,11 +115,11 @@ export default function Signup() {
 
             {/* Age Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Age
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 type="number"
                 placeholder="Enter your age"
                 value={age}
@@ -130,11 +130,11 @@ export default function Signup() {
 
             {/* Genre / Interest Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Interest (Genre)
               </label>
               <select
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                 value={genre}
                 onChange={(e) => setGenre(e.target.value)}
                 required
@@ -150,11 +150,11 @@ export default function Signup() {
 
             {/* Password Input */}
             <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-bold text-gray-600 mb-2 uppercase tracking-wide">
                 Password
               </label>
               <input
-                className="w-full bg-white/5 border border-white/10 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
+                className="w-full bg-white/5 border border-gray-400 text-black p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder-gray-500"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

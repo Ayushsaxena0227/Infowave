@@ -14,6 +14,7 @@ import Home from "./pages/home/index.jsx";
 import About from "./pages/about/index.jsx";
 import Contact from "./pages/contact/index.jsx";
 import NewsFeed from "./pages/dashboard/index.jsx";
+import MyFeed from "./pages/dashboard/components/MyFeed.jsx";
 
 export default function App() {
   return (
@@ -34,6 +35,14 @@ export default function App() {
               </PrivateRoute>
             }
           /> */}
+          <Route
+            path="/myfeed"
+            element={
+              <PrivateRoute>
+                <MyFeed />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/feed"
             element={
